@@ -30,12 +30,12 @@ public class Customer implements Serializable {
     @Column(name = "username",nullable = false,length = 50)
     private String username;
 
-    @Column(name="correo",nullable = true,length = 50)
+    @Column(name="email",nullable = true,length = 50)
     private String email;
 
     @Column(name = "phone",nullable = true,length = 9)
     private String phone;
 
     @Column(name = "gender",nullable = false,length = 100)
-    private char gender;
+    private String gender;
 }

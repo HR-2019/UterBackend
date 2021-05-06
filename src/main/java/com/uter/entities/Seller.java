@@ -17,17 +17,17 @@ public class Seller implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="NName", nullable = false, length = 50)
+    @Column(name="name", nullable = false, length = 50)
     private String name;
-    @Column(name="NUsername", nullable = false, length = 50)
+    @Column(name="username", nullable = false, length = 50)
     private String username;
-    @Column(name="NPassword", nullable = false, length = 20)
+    @Column(name="password", nullable = false, length = 20)
     private String password;
-    @Column(name="NCorreo", nullable = false, length = 50)
+    @Column(name="email", nullable = false, length = 50)
     private String correo;
-    @Column(name="NPhone", nullable = false, length = 9) // podría ser nullable (revisar)
+    @Column(name="phone", nullable = false, length = 9) // podría ser nullable (revisar)
     private int phone;
-    @Column(name="FGender", nullable = false, length = 2)
+    @Column(name="gender", nullable = false, length = 2)
     private String gender;
 
 }
