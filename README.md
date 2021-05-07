@@ -2,4 +2,5 @@
 Trabajo para el curso de Aplicaciones Open Source
 
 Landing Page:
-https://alejandronolasco.github.io/LandingPageAOS/index.html
+- URL: https://alejandronolasco.github.io/LandingPageAOS/index.html
+- Repositorio: https://github.com/AlejandroNolasco/LandingPageAOS
