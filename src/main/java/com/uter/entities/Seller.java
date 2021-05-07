@@ -24,9 +24,9 @@ public class Seller implements Serializable {
     @Column(name="password", nullable = false, length = 20)
     private String password;
     @Column(name="email", nullable = false, length = 50)
-    private String correo;
-    @Column(name="phone", nullable = false, length = 9) // podría ser nullable (revisar)
-    private int phone;
+    private String email;
+    @Column(name="phone", nullable = false, length = 9)
+    private String phone;
     @Column(name="gender", nullable = false, length = 2)
     private String gender;
 
