@@ -12,8 +12,8 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@NamedQuery(name = "Customer.findByUsername",query =
-        "select c from Customer c where c.username= ?1")
+/*@NamedQuery(name = "Customer.findByUsername",query =
+        "select c from Customer c where c.username= ?1")*/
 public class Customer implements Serializable {
 
     @Id
@@ -38,4 +38,5 @@ public class Customer implements Serializable {
 
     @Column(name = "gender",nullable = false,length = 100)
     private String gender;
+    
 }
