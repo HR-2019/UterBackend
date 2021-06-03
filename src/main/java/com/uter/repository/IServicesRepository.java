@@ -13,5 +13,5 @@ import java.util.List;
 public interface IServicesRepository extends JpaRepository<Services, Long> {
     public List<Services> findByName(String name);
     @Query("Select b from Reviews b where b.description =:descrip")
-    public List<Reviews> findDescription(@Param("descrip") String description);
+    public List<Services> findDescriptions(@Param("descrip") String description);
 }

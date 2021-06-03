@@ -1,8 +1,6 @@
 package com.uter.service.impl;
 
-import com.uter.entities.Reviews;
 import com.uter.entities.Services;
-import com.uter.repository.IReviewsRepository;
 import com.uter.repository.IServicesRepository;
 import com.uter.service.IServicesService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +27,7 @@ public class IServicesServiceImpl implements IServicesService {
         servicesRepository.deleteById(id);
     }
 
+
     @Override
     public List<Services> getAll() throws Exception {
         return servicesRepository.findAll();
@@ -39,13 +38,33 @@ public class IServicesServiceImpl implements IServicesService {
         return servicesRepository.findById(id);
     }
 
+
     @Override
     public List<Services> findByName(String name) throws Exception {
         return servicesRepository.findByName(name);
     }
 
     @Override
-    public List<Reviews> findDescription(String description) throws Exception {
-        return servicesRepository.findDescription(description);
+    public List<Services> findDescriptions(String description) throws Exception {
+        return servicesRepository.findDescriptions(description);
     }
 }
+/*
+
+
+    @Override
+
+
+    @Override
+
+    @Override
+
+
+    @Override
+
+    @Override
+
+
+    @Override
+
+*/

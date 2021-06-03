@@ -116,7 +116,7 @@ public class ReviewsController {
             @ApiResponse(code=200, message = "Datos de los Reviews eliminados"),
             @ApiResponse(code=404, message = "Reviews no encontrado")
     })
-    public ResponseEntity<Reviews> deleteCustomer(@PathVariable("id")Long id){
+    public ResponseEntity<Reviews> deleteReviews(@PathVariable("id")Long id){
         try{
             Optional<Reviews> reviewsDelete = reviewsService.getById(id);
             if(!reviewsDelete.isPresent())
