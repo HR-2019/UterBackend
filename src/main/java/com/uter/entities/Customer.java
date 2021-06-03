@@ -1,5 +1,6 @@
 package com.uter.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,5 +37,10 @@ public class Customer implements Serializable {
 
     @Column(name = "gender",nullable = false,length = 100)
     private String gender;
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="rol_id",nullable = false)
+    private Rol rol;
 
 }
