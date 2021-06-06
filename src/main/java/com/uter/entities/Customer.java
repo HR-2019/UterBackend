@@ -35,11 +35,11 @@ public class Customer implements Serializable {
     @Column(name = "phone",nullable = true,length = 9)
     private String phone;
 
-    @Column(name = "gender",nullable = false,length = 100)
+    @Column(name = "gender",nullable = false,length = 2)
     private String gender;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     @JoinColumn(name="rol_id",nullable = false)
     private Rol rol;
 

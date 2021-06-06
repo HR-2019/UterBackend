@@ -13,6 +13,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Reviews implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
@@ -22,13 +23,14 @@ public class Reviews implements Serializable {
     @Column(name = "stars", nullable = false)
     private int stars;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="seller_id",nullable = false)
+    @JoinColumn(name = "seller_id", nullable = false)
     private Seller seller;
 
-    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="customer_id",nullable = false)
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
+
 }

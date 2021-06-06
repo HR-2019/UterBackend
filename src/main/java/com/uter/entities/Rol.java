@@ -24,7 +24,4 @@ public class Rol implements Serializable {
     @Column(name="name",nullable = false, length = 20)
     private String name;
 
-    @OneToMany(mappedBy = "rol",fetch = FetchType.LAZY,cascade = CascadeType.ALL,orphanRemoval = true)
-    @JsonIgnoreProperties(value = {"rol"}, allowSetters = true)
-    private List<Customer> customers;
 }

@@ -1,6 +1,7 @@
 package com.uter.controller;
 
 import com.uter.entities.Customer;
+import com.uter.entities.Products;
 import com.uter.entities.Reviews;
 import com.uter.service.ICustomerService;
 import com.uter.service.IReviewsService;
@@ -42,6 +43,25 @@ public class ReviewsController {
             return new ResponseEntity<List<Reviews>>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Buscar Review por Id", notes = "Método para encontrar un review por su respectivo Id")
+    @ApiResponses({
+            @ApiResponse(code=201, message = "Review encontrado"),
+            @ApiResponse(code=404, message = "Review no encontrado")
+    })
+    public ResponseEntity<Reviews> findById(@PathVariable("id") Long id) {
+        try {
+            Optional<Reviews> reviews = reviewsService.getById(id);
+            if(!reviews.isPresent())
+                return new ResponseEntity<Reviews>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Reviews>(reviews.get(), HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<Reviews>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
     @GetMapping(value="searchByDescription/{description}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Buscar Reviews por description", notes = "Método para encontrar Reviews por su respectivo description")
     @ApiResponses({

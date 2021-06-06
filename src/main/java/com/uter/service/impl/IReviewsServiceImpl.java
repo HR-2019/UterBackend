@@ -20,11 +20,13 @@ public class IReviewsServiceImpl implements IReviewsService {
     private IReviewsRepository reviewsRepository;
 
     @Override
+    @Transactional
     public Reviews save(Reviews reviews) throws Exception {
         return reviewsRepository.save(reviews) ;
     }
 
     @Override
+    @Transactional
     public void delete(Long id) throws Exception {
         reviewsRepository.deleteById(id);
     }
