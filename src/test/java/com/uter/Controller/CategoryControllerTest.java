@@ -34,9 +34,9 @@ public class CategoryControllerTest {
     @BeforeEach
     void Setup(){
         categoryList = new ArrayList<>();
-        categoryList.add(new Category(1L,"Computadora","Computadora diseñada para una sola persona"));
-        categoryList.add(new Category(1L,"Mouse","Es un dispositivo apuntador utilizado para facilitar el manejo de un entorno gráfico en una computadora."));
-        categoryList.add(new Category(1L,"Teclado","Es un dispositivo o periférico de entrada, en parte inspirado en el teclado de las máquinas de escribir, que utiliza un sistema de botones o teclas"));
+        categoryList.add(new Category(1L,"",""));
+        categoryList.add(new Category(1L,"",""));
+        categoryList.add(new Category(1L,"",""));
     }
     @Test
     void findAllCustomer() throws Exception{
@@ -47,7 +47,7 @@ public class CategoryControllerTest {
     @Test
     void findCategoryById() throws Exception{
         Long CategoryId = 1L;
-        Category category = new Category(1L,"Computadora","Computadora diseñada para una sola persona");
+        Category category = new Category(1L,"","");
         given(categoryService.getById(CategoryId)).willReturn(Optional.of(category));
 
         mockMvc.perform(get("/api/categories/{id}",category.getId()))

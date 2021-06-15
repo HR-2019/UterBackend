@@ -36,9 +36,9 @@ public class ProductsControllerTest {
     void Setup(){
 
         productsList = new ArrayList<>();
-        productsList.add(new Products(1L,"mouse","aaaa",30.5f,seller,category));
-        productsList.add(new Products(2L,"asdsads","bbbb",30.5f,seller,category));
-        productsList.add(new Products(3L,"monitor","cccc",30.5f,seller,category));
+        productsList.add(new Products(1L,"Mouse","Es un dispositivo apuntador utilizado para facilitar el manejo de un entorno gráfico en una computadora.",30.5f,seller,category));
+        productsList.add(new Products(2L,"Computadora","Computadora diseñada para una sola persona",30.5f,seller,category));
+        productsList.add(new Products(3L,"Teclado","Es un dispositivo o periférico de entrada, en parte inspirado en el teclado de las máquinas de escribir, que utiliza un sistema de botones o teclas\"",30.5f,seller,category));
 
     }
     @Test

@@ -45,8 +45,8 @@ public class RolControllerTest {
 
         rolList = new ArrayList<>();
         rolList.add(new Rol(1L,"novato"));
-        rolList.add(new Rol(2L,"medio"));
-        rolList.add(new Rol(3L,"experto"));
+        rolList.add(new Rol(2L,"intermedio"));
+        rolList.add(new Rol(3L,"avanzado"));
 
     }
     @Test

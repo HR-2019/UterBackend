@@ -32,7 +32,7 @@ public class CategoryServiceImplTest {
     private ICategoryServiceImpl categoryService;
     @Test
     public void saveTest(){
-        Category category = new Category(1L,"Computadora","Computadora diseñada para una sola persona");
+        Category category = new Category(1L,"","");
         given(categoryRepository.save(category)).willReturn(category);
         Category savedCategory = null;
         try{
@@ -46,9 +46,9 @@ public class CategoryServiceImplTest {
     @Test
     void findAllTest() throws Exception{
         List<Category> list = new ArrayList<>();
-        list.add(new Category(1L,"Computadora","Computadora diseñada para una sola persona"));
-        list.add(new Category(1L,"Mouse","Es un dispositivo apuntador utilizado para facilitar el manejo de un entorno gráfico en una computadora."));
-        list.add(new Category(1L,"Teclado","Es un dispositivo o periférico de entrada, en parte inspirado en el teclado de las máquinas de escribir, que utiliza un sistema de botones o teclas"));
+        list.add(new Category(1L,"",""));
+        list.add(new Category(2L,"",""));
+        list.add(new Category(3L,"",""));
         given(categoryRepository.findAll()).willReturn(list);
         List<Category> expected = categoryService.getAll();
         assertEquals(expected,list);

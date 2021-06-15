@@ -1,4 +1,4 @@
-/*
+
 package com.uter.service;
 
 import com.uter.entities.Customer;
@@ -16,7 +16,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -37,7 +39,7 @@ public class OrdersServiceImplTest {
     private Customer customer;
     @Test
     public void saveTest(){
-        Orders orders = new Orders(1L,seller,customer,"2021-06-15T04:31:10.855Z");
+        Orders orders = new Orders(1L,seller,customer,ParseDate("2021-06-15T04:31:10.855Z"));
         given(ordersRepository.save(orders)).willReturn(orders);
         Orders savedOrders = null;
         try{
@@ -51,9 +53,9 @@ public class OrdersServiceImplTest {
     @Test
     void findAllTest() throws Exception{
         List<Orders> list = new ArrayList<>();
-        list.add(new Orders(1L,seller,customer,"2021-06-15T04:31:10.855Z"));
-        list.add(new Orders(2L,seller,customer,"2021-06-15T04:31:10.855Z"));
-        list.add(new Orders(3L,seller,customer,"2021-06-15T04:31:10.855Z"));
+        list.add(new Orders(1L,seller,customer,ParseDate("2021-06-15T04:31:10.855Z")));
+        list.add(new Orders(2L,seller,customer,ParseDate("2021-06-15T04:31:10.855Z")));
+        list.add(new Orders(3L,seller,customer,ParseDate("2021-06-15T04:31:10.855Z")));
         given(ordersRepository.findAll()).willReturn(list);
         List<Orders> expected = ordersService.getAll();
         assertEquals(expected,list);
@@ -64,5 +66,13 @@ public class OrdersServiceImplTest {
         ordersService.delete(id);
         verify(ordersRepository,times(1)).deleteById(id);
     }
+    public static Date ParseDate(String date) {
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        Date result = null;
+        try{
+            result = format.parse(date);
+        }catch (Exception ex){
+        }
+        return result;
+    }
 }
-*/
