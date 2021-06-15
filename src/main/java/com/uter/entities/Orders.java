@@ -7,23 +7,31 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
+
 @Entity
+@Table(name = "orders")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Services implements Serializable {
+public class Orders implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
-
-    @Column(name = "name", nullable = false,length = 100)
-    private String name;
-    @Column(name = "description", nullable = false, length = 150)
-    private String description;
-
 
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="seller_id",nullable = false)
     private Seller seller;
+
+    @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="customer_id",nullable = false)
+    private Customer customer;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name="orderDate", nullable = false)
+    private Date orderDate;
+
 }

@@ -47,8 +47,8 @@ public class RolServiceImplTest {
     void findAllTest() throws Exception{
         List<Rol> list = new ArrayList<>();
         list.add(new Rol(1L,"novato"));
-        list.add(new Rol(2L,"medio"));
-        list.add(new Rol(3L,"experto"));
+        list.add(new Rol(2L,"intermedio"));
+        list.add(new Rol(3L,"avanzado"));
         given(rolRepository.findAll()).willReturn(list);
         List<Rol> expected = rolService.getAll();
         assertEquals(expected,list);
