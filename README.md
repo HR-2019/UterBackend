@@ -1,5 +1,5 @@
 # UterBackend
-Trabajo para el curso de Aplicaciones Open Source por Egoboys
+Trabajo para el curso de Aplicaciones Open Source por nosotros "Egoboys"
 
 Landing Page:
 - URL: https://alejandronolasco.github.io/LandingPageAOS/index.html
