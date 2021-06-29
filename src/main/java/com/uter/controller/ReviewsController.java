@@ -21,6 +21,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/reviews")
+@CrossOrigin(origins = "http://localhost:4200")
 @Api(tags="Reviews", value = "Servicio Web RESTFul de Reviews")
 public class ReviewsController {
     @Autowired

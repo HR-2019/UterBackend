@@ -1,0 +1,25 @@
+#spring.datasource.url= postgres://aouvejaxsjtiwl:18530a69d238396c2bfa48f98ff649e26df2b50f0910b93dddd765b9e604b2c2@ec2-52-86-25-51.compute-1.amazonaws.com:5432/dc33donc2lv0ka
+#spring.datasource.username= aouvejaxsjtiwl
+#spring.datasource.password= 18530a69d238396c2bfa48f98ff649e26df2b50f0910b93dddd765b9e604b2c2
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.jpa.database= postgresql
+#spring.jpa.hibernate.ddl-auto= update
+#spring.jpa.generate-ddl= false
+#spring.jpa.show-sql= false
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/UterDB
+    username: postgres
+    password: alonsoxd18
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    hibernate:
+      ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true

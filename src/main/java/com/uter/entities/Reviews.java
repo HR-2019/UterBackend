@@ -20,6 +20,7 @@ public class Reviews implements Serializable {
 
     @Column(name = "description", nullable = false, length = 150)
     private String description;
+
     @Column(name = "stars", nullable = false)
     private int stars;
 

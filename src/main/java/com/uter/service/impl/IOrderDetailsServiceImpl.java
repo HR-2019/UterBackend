@@ -18,13 +18,11 @@ public class IOrderDetailsServiceImpl implements IOrderDetailsService {
     private IOrderDetailsRepository orderDetailsRepository;
 
     @Override
-    @Transactional
     public OrderDetails save(OrderDetails orderDetails) throws Exception {
         return orderDetailsRepository.save(orderDetails);
     }
 
     @Override
-    @Transactional
     public void delete(Long id) throws Exception {
         orderDetailsRepository.deleteById(id);
     }
@@ -37,5 +35,10 @@ public class IOrderDetailsServiceImpl implements IOrderDetailsService {
     @Override
     public Optional<OrderDetails> getById(Long id) throws Exception {
         return orderDetailsRepository.findById(id);
+    }
+
+    @Override
+    public List<OrderDetails> findDiscount(int discount) throws Exception {
+        return orderDetailsRepository.findDiscount(discount);
     }
 }
