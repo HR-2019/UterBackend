@@ -9,14 +9,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "order_details", uniqueConstraints = {@UniqueConstraint(columnNames = {"orders_id", "products_id"})})
+@Table(name = "order_details")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class OrderDetails implements Serializable {
 
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
     @JsonIgnoreProperties({"hibernateLazyInitializer","handler"})

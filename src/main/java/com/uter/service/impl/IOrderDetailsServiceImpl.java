@@ -18,11 +18,13 @@ public class IOrderDetailsServiceImpl implements IOrderDetailsService {
     private IOrderDetailsRepository orderDetailsRepository;
 
     @Override
+    @Transactional
     public OrderDetails save(OrderDetails orderDetails) throws Exception {
         return orderDetailsRepository.save(orderDetails);
     }
 
     @Override
+    @Transactional
     public void delete(Long id) throws Exception {
         orderDetailsRepository.deleteById(id);
     }
