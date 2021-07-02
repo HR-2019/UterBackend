@@ -19,6 +19,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/categories")
+@CrossOrigin(origins = "http://localhost:4200")
 @Api(tags="Category", value = "Servicio Web RESTFul de Categories")
 public class CategoryController {
 

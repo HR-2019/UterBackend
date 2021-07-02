@@ -44,7 +44,7 @@ public class OrderDetailsControllerTest {
     @Test
     void findAllOrderDetails() throws Exception{
         given(orderDetailsService.getAll()).willReturn(orderDetailsList);
-        mockMvc.perform(get("/api/orderDetailsdetails")).andExpect(status().isOk());
+        mockMvc.perform(get("/api/orderdetails")).andExpect(status().isOk());
 
     }
     @Test
@@ -53,7 +53,7 @@ public class OrderDetailsControllerTest {
         OrderDetails orderDetails = new OrderDetails(1L,orders,products,10.0f,50,80);
         given(orderDetailsService.getById(OrderDetailsId)).willReturn(Optional.of(orderDetails));
 
-        mockMvc.perform(get("/api/orderDetailsdetails/{id}",orderDetails.getId()))
+        mockMvc.perform(get("/api/orderdetails/{id}",orderDetails.getId()))
                 .andExpect(status().isOk());
     }
 }

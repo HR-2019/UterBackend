@@ -1,6 +1,7 @@
 package com.uter.controller;
 
 import com.uter.entities.OrderDetails;
+import com.uter.entities.Products;
 import com.uter.service.IOrderDetailsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,7 +18,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/orderDetailsdetails")
+@RequestMapping("/api/orderdetails")
+@CrossOrigin(origins = "http://localhost:4200")
 @Api(tags="OrderDetails", value = "Servicio Web RESTFul de OrderDetails")
 public class OrderDetailsController {
     
@@ -57,6 +59,25 @@ public class OrderDetailsController {
 
         } catch (Exception e) {
             return new ResponseEntity<OrderDetails>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping(value = "searchByDiscount/{discount}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Buscar orderDetails por Discount", notes = "Método para encontrar un orderDetails por su " +
+            "respectivo Discount")
+    @ApiResponses({
+            @ApiResponse(code=201, message = "orderDetails encontrado"),
+            @ApiResponse(code=404, message = "orderDetails no encontrado")
+    })
+    public ResponseEntity<List<OrderDetails>> findByDiscount(@PathVariable("discount") int discount){
+        try{
+            List<OrderDetails> orderDetails = orderDetailsService.findDiscount(discount);
+            if(orderDetails.size()>0)
+                return new ResponseEntity<List<OrderDetails>>(orderDetails, HttpStatus.OK);
+            else
+                return new ResponseEntity<List<OrderDetails>>(HttpStatus.NOT_FOUND);
+        }catch(Exception e){
+            return new ResponseEntity<List<OrderDetails>>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

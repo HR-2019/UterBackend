@@ -38,4 +38,9 @@ public class IOrderDetailsServiceImpl implements IOrderDetailsService {
     public Optional<OrderDetails> getById(Long id) throws Exception {
         return orderDetailsRepository.findById(id);
     }
+
+    @Override
+    public List<OrderDetails> findDiscount(int discount) throws Exception {
+        return orderDetailsRepository.findDiscount(discount);
+    }
 }
